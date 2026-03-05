@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TraderApp</title>
+    <link id="favicon" rel="icon" href="/app/public/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="/cdn/npm/bootstrap/5.0.2/css/bootstrap.min.css">
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="/cdn/npm/font-awesome/7.0.1/css/all.min.css">
+    <!-- Bootstrap Icons (backup) -->
+    <link rel="stylesheet" href="/cdn/npm/bootstrap-icons/1.11.3/font/bootstrap-icons.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8737017915813362"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="messages"></div>
+    <div id="nav"></div>
+    <div id="main"></div>
+    <div id="foot"></div>
+</body>
+
+<script type="module">
+    import {App} from '/app/App.js';
+    var myApp = new App();
+    myApp.load();
+</script>
+</html>

@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-steel shadow">
+  <div class="container-fluid px-3">
+    <!-- Brand -->
+    <a href="/home" data-route-link class="navbar-brand d-flex align-items-center">
+      <img width="48px" height="48px" src="/app/public/images/lsb/lsb_silver2.png" 
+           alt="Life.Science.Balance" class="me-2 rounded lsb-brand-icon lsb-coin-spin">
+      <span class="lsb-brand-text d-none d-md-inline">Life.Science.Balance</span>
+      <span class="d-md-none fw-bold">LSB</span>
+    </a>
+    
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Collapsible Content: center the content within each child element using flexbox -->
+
+      <!-- Main Nav -->
+    <div id="navbarNavDropdownA" class="flex-container icon-only-mobile">
+      <ul class="navbar-nav me-auto my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link px-3" data-route-link href="/courses">
+            <i class="fas fa-book me-1"></i>
+            <span class="nav-text">Courses</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" data-route-link href="/store">
+            <i class="fas fa-shopping-bag me-1"></i>
+            <span class="nav-text">Stores</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="navbarNavDropdown" class="collapse navbar-collapse">
+      
+      <!-- Right Side Nav -->
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link px-3" data-route-link aria-current="page" href="/home" title="Dashboard">
+            <i class="fas fa-tachometer-alt me-1"></i>
+            {{!-- <span class="nav-text">Dashboard</span> --}}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" data-route-link href="/about" title="About ">
+            <i class="fas fa-info-circle me-1"></i>
+            {{!-- <span class="nav-text">About</span> --}}
+          </a>
+        </li>
+        {{#if isAdmin}}
+        <li class="nav-item">
+          <a class="nav-link px-3 text-warning" href="/admin" data-route-link title="Admin">
+            <i class="fas fa-cog me-1"></i>
+            {{!-- <span class="nav-text">Admin</span> --}}
+          </a>
+        </li>
+        {{/if}}
+        {{#unless isAuthenticated}}
+        <li class="nav-item">
+          <a class="nav-link px-3" href="/login" data-route-link id="loginLink" name="loginLink" title="Login">
+            <i class="fas fa-sign-in-alt me-1"></i>
+            <span class="nav-text">Login</span>
+          </a>
+        </li>
+        {{/unless}}
+        {{#if isAuthenticated}}
+
+        <!-- User Profile -->
+        <li class="nav-item">
+          <a class="nav-link px-2 d-flex align-items-center" href="/profile" data-route-link title="View profile">
+            {{#if user.profileImage}}
+            <img src="{{user.profileImage}}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover; border: 1px solid rgba(255,255,255,0.3);">
+            {{else if user.photo}}
+            <img src="{{user.photo}}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover; border: 1px solid rgba(255,255,255,0.3);">
+            {{else}}
+            <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+            {{/if}}
+            <span class="nav-text ms-2 d-none d-lg-inline small">{{#if user.firstname}}{{user.firstname}}{{else if user.name}}{{user.name}}{{else}}Profile{{/if}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="/logout" title="Logout" data-route-link>
+            <i class="fas fa-sign-out-alt me-1"></i>
+            {{!-- <span class="nav-text">Logout</span> --}}
+          </a>
+        </li>
+        <!-- Theme Toggle -->
+        <li class="nav-item me-2">
+          <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light/dark theme">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        </li>
+        <!-- Shopping Cart Icon -->
+        <li class="nav-item">
+          <button class="nav-link px-2 position-relative btn-cart" id="navCartBtn" title="Shopping Cart" aria-label="View shopping cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="navCartBadge" style="display: none; font-size: 0.65rem;">0</span>
+          </button>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

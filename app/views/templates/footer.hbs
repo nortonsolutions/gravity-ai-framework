@@ -1,0 +1,225 @@
+<footer id="footer" class="lsb-footer mt-auto">
+    <!-- Main Footer - Newsletter Focused -->
+    <div class="footer-main py-4">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <!-- Rotating Logo -->
+                <div class="col-12 col-md-3 mb-3 mb-md-0">
+                    <img
+                        src="/app/public/images/lsb/lsb_wide_light_electric1.gif"
+                        alt="LSB"
+                        class="footer-logo-rotating"
+                        data-lsb-rotator="lsbWideLightGif"
+                        data-lsb-rotator-dark="lsbWideDarkGif"
+                        data-interval="5000"
+                        style="max-width: 180px;"
+                    >
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="col-12 col-md-6">
+                    <div class="newsletter-section">
+                        <h5 class="footer-heading mb-2 fw-bold">
+                            <i class="fas fa-envelope me-2"></i>Subscribe to Updates
+                        </h5>
+                        <p class="footer-text small mb-3">Get the latest news, course updates, and exclusive content</p>
+                        <div class="d-flex flex-column align-items-center">
+                            <form id="newsletterForm" class="d-flex justify-content-center gap-2 flex-wrap">
+                                <div class="input-group" style="max-width: 350px;">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="newsletterEmail"
+                                        class="form-control"
+                                        placeholder="Enter your email address"
+                                        required
+                                    >
+                                    <button class="btn btn-primary px-4" type="submit" id="btnSubmitNewsletterForm">
+                                        <i class="fas fa-paper-plane me-1"></i>
+                                        <span class="d-none d-sm-inline">Subscribe</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <p class="footer-text small mt-2 mb-0">
+                            <i class="fas fa-lock me-1"></i>We respect your privacy. Unsubscribe anytime.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-12 col-md-3 mt-3 mt-md-0">
+                    <div class="footer-text small mb-2">Connect With Us</div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div id="tagLine" class="py-2">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <div class="d-flex flex-wrap justify-content-center gap-3 small">
+                        <a href="/home" data-route-link class="text-white-50 text-decoration-none">Home</a>
+                        <a href="/about" data-route-link class="text-white-50 text-decoration-none">About</a>
+                        <a href="/services" data-route-link class="text-white-50 text-decoration-none">Services</a>
+                        <a href="/contact" data-route-link class="text-white-50 text-decoration-none">Contact</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-center mt-2 mt-md-0">
+                    <small class="text-white-50">
+                        <i class="fas fa-copyright"></i> 2025 Quizzap | Norton Solutions
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.lsb-footer {
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Footer theme colors - light mode default */
+.footer-main {
+    background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
+    border-top: 3px solid #cbd5e1;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-heading {
+    color: #111827;
+    transition: color 0.3s ease;
+}
+
+.footer-text {
+    color: #374151;
+    transition: color 0.3s ease;
+}
+
+#tagLine {
+    background: #e5e7eb;
+    transition: background 0.3s ease;
+}
+
+/* Dark theme overrides for footer */
+[data-theme="dark"] .footer-main {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    border-top-color: #6366f1;
+}
+
+[data-theme="dark"] .footer-heading {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .footer-text {
+    color: rgba(255,255,255,0.6);
+}
+
+[data-theme="dark"] #tagLine {
+    background: #050810;
+}
+
+.social-link {
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    color: #1f2937 !important;
+    transform: translateY(-2px);
+}
+
+.newsletter-section .form-control {
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: #111827;
+}
+
+.newsletter-section .form-control::placeholder {
+    color: rgba(55,65,81,0.6);
+}
+
+.newsletter-section .form-control:focus {
+    background: rgba(255,255,255,0.15);
+    border-color: #3498db;
+    color: #111827;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+[data-theme="dark"] .newsletter-section .form-control {
+    border-color: rgba(99, 102, 241, 0.3);
+    background: rgba(99, 102, 241, 0.1);
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .newsletter-section .form-control::placeholder {
+    color: rgba(226, 232, 240, 0.4);
+}
+
+[data-theme="dark"] .newsletter-section .form-control:focus {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #818cf8;
+    box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
+}
+
+.newsletter-section .btn-primary {
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border: none;
+}
+
+.newsletter-section .btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%);
+    transform: translateY(-1px);
+}
+
+.footer-logo-rotating {
+    transition: all 0.4s ease-in-out;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+
+.footer-logo-rotating:hover {
+    transform: scale(1.1);
+}
+
+#tagLine a {
+    color: #4b5563;
+    transition: color 0.2s ease;
+}
+
+#tagLine a:hover {
+    color: #1f2937 !important;
+}
+
+#tagLine small {
+    color: #4b5563;
+}
+
+#tagLine .text-white-50 {
+    color: #1f2937 !important;
+}
+
+[data-theme="dark"] #tagLine .text-white-50 {
+    color: rgba(255, 255, 255, 0.65) !important;
+}
+</style>
